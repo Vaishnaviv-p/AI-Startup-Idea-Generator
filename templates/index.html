@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AI Startup Idea Generator</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <h1>🚀 AI Startup Idea Generator</h1>
+
+    <form>
+        <input
+            type="text"
+            name="industry"
+            placeholder="Enter Industry"
+        >
+
+        <button type="submit">
+            Generate
+        </button>
+    </form>
+
+    <br>
+
+    {% if result %}
+
+    <div class="card">
+
+        <h2>
+            🚀 Startup Name: {{ result.name }}
+        </h2>
+
+        <h3>
+            💡 Startup Idea:
+            {{ result.idea }} for {{ result.industry }}
+        </h3>
+
+        <p>
+            <b>🎯 Target Customers:</b>
+            {{ result.customer }}
+        </p>
+
+        <p>
+            <b>💰 Revenue Model:</b>
+            {{ result.revenue }}
+        </p>
+
+        <p>
+            <b>📈 Startup Score:</b>
+            {{ result.score }}/100
+        </p>
+
+    </div>
+
+    {% endif %}
+
+</body>
+</html>
