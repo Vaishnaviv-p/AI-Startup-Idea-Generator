@@ -39,8 +39,24 @@ idea = random.choice(startup_ideas)
 customer = random.choice(customers)
 revenue = random.choice(revenue_models)
 
-print("\n===== Startup Generated =====")
+print("\n===== Startup Generated =====\n")
+
 print("Startup Name:", name)
+print("Industry:", industry)
 print("Startup Idea:", idea, "for", industry)
 print("Target Customers:", customer)
 print("Revenue Model:", revenue)
+
+print("\nDescription:")
+print(
+    name,
+    "is an",
+    idea,
+    "designed for",
+    industry +
+    ". It helps",
+    customer,
+    "solve problems efficiently and generates revenue through a",
+    revenue,
+    "model."
+)
