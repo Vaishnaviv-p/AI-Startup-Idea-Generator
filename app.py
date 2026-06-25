@@ -2,17 +2,25 @@ import random
 
 industry = input("Enter an industry: ")
 
-ideas = [
+startup_names = [
+    "AINova",
+    "SmartSync",
+    "VisionAI",
+    "FutureFlow",
+    "InnoTech"
+]
+
+startup_ideas = [
     "AI Assistant",
     "AI Analytics Platform",
     "AI Marketplace",
     "AI Automation Tool",
-    "AI Recommendation System",
-    "AI Chatbot",
-    "AI Productivity Tool"
+    "AI Recommendation System"
 ]
 
-idea = random.choice(ideas)
+name = random.choice(startup_names)
+idea = random.choice(startup_ideas)
 
-print("\nGenerated Startup Idea:")
-print(idea, "for", industry)
+print("\n===== Startup Generated =====")
+print("Startup Name:", name)
+print("Startup Idea:", idea, "for", industry)
