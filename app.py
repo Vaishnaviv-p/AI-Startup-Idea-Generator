@@ -39,6 +39,8 @@ idea = random.choice(startup_ideas)
 customer = random.choice(customers)
 revenue = random.choice(revenue_models)
 
+score = random.randint(60, 100)
+
 print("\n===== Startup Generated =====\n")
 
 print("Startup Name:", name)
@@ -60,3 +62,5 @@ print(
     revenue,
     "model."
 )
+
+print("\nStartup Score:", score, "/100")
