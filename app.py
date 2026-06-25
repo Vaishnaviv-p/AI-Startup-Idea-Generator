@@ -1,3 +1,5 @@
+import random
+
 industry = input("Enter an industry: ")
 
 ideas = [
@@ -5,10 +7,12 @@ ideas = [
     "AI Analytics Platform",
     "AI Marketplace",
     "AI Automation Tool",
-    "AI Recommendation System"
+    "AI Recommendation System",
+    "AI Chatbot",
+    "AI Productivity Tool"
 ]
 
-print("\nStartup Ideas:")
+idea = random.choice(ideas)
 
-for idea in ideas:
-    print("-", idea, "for", industry)
+print("\nGenerated Startup Idea:")
+print(idea, "for", industry)
