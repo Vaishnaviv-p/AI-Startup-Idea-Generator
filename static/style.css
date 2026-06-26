@@ -9,12 +9,12 @@
 }
 
 body{
-    background:linear-gradient(135deg,#4facfe,#00f2fe,#6a11cb);
+    background:linear-gradient(135deg,#4facfe,#00c6fb,#6a11cb);
     min-height:100vh;
     display:flex;
     justify-content:center;
-    align-items:center;
-    padding:40px;
+    align-items:flex-start;
+    padding:40px 20px;
 }
 
 .container{
@@ -24,9 +24,9 @@ body{
 
 h1{
     text-align:center;
-    color:white;
-    font-size:38px;
-    margin-bottom:30px;
+    color:#ffffff;
+    font-size:42px;
+    margin-bottom:35px;
     font-weight:700;
 }
 
@@ -34,83 +34,148 @@ form{
     display:flex;
     justify-content:center;
     gap:15px;
-    margin-bottom:30px;
+    margin-bottom:35px;
     flex-wrap:wrap;
 }
 
 input{
-    width:420px;
+    width:430px;
     max-width:100%;
-    padding:15px;
+    padding:16px;
     border:none;
-    border-radius:10px;
+    border-radius:12px;
     outline:none;
     font-size:16px;
+    background:#ffffff;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
 button{
-    padding:15px 30px;
+    padding:16px 35px;
     border:none;
-    border-radius:10px;
+    border-radius:12px;
     background:#2563eb;
     color:white;
     font-size:16px;
     font-weight:600;
     cursor:pointer;
     transition:.3s;
+    box-shadow:0 8px 20px rgba(37,99,235,.35);
 }
 
 button:hover{
     background:#1d4ed8;
-    transform:translateY(-2px);
+    transform:translateY(-3px);
 }
 
+/* ---------- Premium Glass Card ---------- */
+
 .card{
-    background:white;
-    border-radius:18px;
-    padding:30px;
-    box-shadow:0 15px 40px rgba(0,0,0,.2);
+
+    background:rgba(255,255,255,.45);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    border-radius:24px;
+
+    padding:35px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+    animation:fadeIn .6s ease;
 }
 
 .card h2{
+
     color:#2563eb;
-    margin-top:18px;
-    margin-bottom:8px;
+
     font-size:22px;
+
+    margin-top:18px;
+    margin-bottom:10px;
 }
 
 .card p{
+
+    color:#1f2937;
+
     font-size:18px;
-    color:#333;
-    margin-bottom:15px;
+
+    line-height:1.8;
+
+    margin-bottom:16px;
+
+    font-weight:500;
 }
 
 hr{
+
     border:none;
-    border-top:1px solid #e5e7eb;
-    margin:18px 0;
+
+    border-top:1px solid rgba(0,0,0,.08);
+
+    margin:20px 0;
 }
+
+/* Fade Animation */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Mobile */
 
 @media(max-width:768px){
 
     h1{
-        font-size:30px;
+
+        font-size:32px;
+
     }
 
     form{
+
         flex-direction:column;
+
         align-items:center;
+
     }
 
     input{
+
         width:100%;
+
     }
 
     button{
+
         width:100%;
+
     }
 
     .card{
-        padding:20px;
+
+        padding:25px;
+
     }
+
 }
