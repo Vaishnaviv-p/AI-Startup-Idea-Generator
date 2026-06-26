@@ -13,7 +13,10 @@
 
 <div class="container">
 
-    <h1>🚀 AI Startup Idea Generator</h1>
+    <div class="header">
+        <h1>🚀 AI Startup Idea Generator</h1>
+        <p>Create powerful AI startup ideas in seconds.</p>
+    </div>
 
     <form action="/" method="GET">
 
@@ -23,7 +26,9 @@
             placeholder="Enter Industry (Healthcare, Education, Finance...)"
             required>
 
-        <button type="submit">Generate</button>
+        <button type="submit">
+            🚀 Generate
+        </button>
 
     </form>
 
@@ -58,7 +63,7 @@
 
         <div class="info-card">
             <h2>🌍 Target Market</h2>
-            <p>{{ result.target_market }}</p>
+            <span class="badge">{{ result.target_market }}</span>
         </div>
 
         <div class="info-card">
@@ -73,12 +78,12 @@
 
         <div class="info-card">
             <h2>📈 Market Potential</h2>
-            <p>{{ result.market_potential }}</p>
+            <span class="badge">{{ result.market_potential }}</span>
         </div>
 
         <div class="info-card">
-            <h2>🏷️ Startup Category</h2>
-            <p>{{ result.category }}</p>
+            <h2>🏷 Startup Category</h2>
+            <span class="badge">{{ result.category }}</span>
         </div>
 
         <div class="info-card score-card">
@@ -88,12 +93,9 @@
             <h3>{{ result.score }}/100</h3>
 
             <div class="progress-bar">
-
-                <div
-                    class="progress-fill"
-                    style="width: {{ result.score }}%;"></div>
+                <div class="progress-fill"
+                     style="width: {{ result.score }}%;">
                 </div>
-
             </div>
 
         </div>
@@ -105,4 +107,5 @@
 </div>
 
 </body>
+
 </html>

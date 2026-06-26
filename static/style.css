@@ -1,243 +1,203 @@
-/* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 body{
 
-    background:linear-gradient(135deg,#4facfe,#00c6fb,#6a11cb);
-
-    min-height:100vh;
-
-    padding:40px 20px;
+background:linear-gradient(135deg,#4facfe,#00c6fb,#6a11cb);
+min-height:100vh;
+padding:40px 20px;
 
 }
 
 .container{
 
-    width:100%;
-
-    max-width:1250px;
-
-    margin:auto;
+max-width:1250px;
+margin:auto;
 
 }
 
-h1{
+.header{
 
-    text-align:center;
+text-align:center;
+margin-bottom:35px;
 
-    color:white;
+}
 
-    font-size:42px;
+.header h1{
 
-    margin-bottom:40px;
+color:white;
+font-size:48px;
+
+}
+
+.header p{
+
+color:white;
+opacity:.9;
+font-size:18px;
+margin-top:10px;
 
 }
 
 form{
 
-    display:flex;
-
-    justify-content:center;
-
-    gap:15px;
-
-    margin-bottom:45px;
-
-    flex-wrap:wrap;
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+margin-bottom:45px;
 
 }
 
 input{
 
-    width:430px;
-
-    padding:16px;
-
-    border:none;
-
-    outline:none;
-
-    border-radius:12px;
-
-    font-size:16px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
+width:430px;
+padding:16px;
+border:none;
+border-radius:12px;
+font-size:16px;
 
 }
 
 button{
 
-    padding:16px 35px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:#2563eb;
-
-    color:white;
-
-    font-size:16px;
-
-    cursor:pointer;
-
-    transition:.3s;
+padding:16px 35px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-size:16px;
+font-weight:600;
+transition:.3s;
 
 }
 
 button:hover{
 
-    transform:translateY(-3px);
-
-    background:#1d4ed8;
+transform:translateY(-3px);
+background:#1d4ed8;
 
 }
 
 .dashboard{
 
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-
-    gap:25px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 
 }
 
 .info-card{
 
-    background:rgba(255,255,255,.35);
-
-    backdrop-filter:blur(18px);
-
-    border-radius:20px;
-
-    border:1px solid rgba(255,255,255,.3);
-
-    padding:25px;
-
-    min-height:220px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:flex-start;
-
-    transition:.35s;
-
-    box-shadow:0 12px 30px rgba(0,0,0,.18);
+background:rgba(255,255,255,.35);
+backdrop-filter:blur(16px);
+border-radius:18px;
+padding:25px;
+min-height:220px;
+border:1px solid rgba(255,255,255,.3);
+transition:.3s;
+box-shadow:0 12px 30px rgba(0,0,0,.18);
 
 }
 
 .info-card:hover{
 
-    transform:translateY(-8px);
-
-    box-shadow:0 20px 40px rgba(0,0,0,.25);
+transform:translateY(-8px);
 
 }
 
 .info-card h2{
 
-    color:#1e3a8a;
-
-    font-size:21px;
-
-    margin-bottom:15px;
+color:#1e3a8a;
+margin-bottom:15px;
 
 }
 
 .info-card p{
 
-    color:#1f2937;
+font-size:18px;
+color:#222;
+line-height:1.6;
 
-    font-size:18px;
+}
 
-    line-height:1.7;
+.badge{
+
+display:inline-block;
+padding:8px 18px;
+border-radius:30px;
+background:#2563eb;
+color:white;
+font-weight:600;
+margin-top:10px;
 
 }
 
 .score-card{
 
-    background:linear-gradient(135deg,#2563eb,#4f46e5);
+background:linear-gradient(135deg,#2563eb,#4f46e5);
+color:white;
 
 }
 
-.score-card h2{
+.score-card h2,
+.score-card h3{
 
-    color:white;
+color:white;
 
 }
 
 .score-card h3{
 
-    color:white;
-
-    font-size:40px;
-
-    margin:20px 0;
+font-size:42px;
+margin:20px 0;
 
 }
 
 .progress-bar{
 
-    width:100%;
-
-    height:14px;
-
-    background:rgba(255,255,255,.35);
-
-    border-radius:30px;
-
-    overflow:hidden;
+height:14px;
+background:rgba(255,255,255,.35);
+border-radius:30px;
+overflow:hidden;
 
 }
 
 .progress-fill{
 
-    height:100%;
-
-    background:white;
-
-    border-radius:30px;
-
-    transition:width 1.2s ease;
+height:100%;
+background:white;
+border-radius:30px;
+transition:1.2s;
 
 }
 
 @media(max-width:768px){
 
-    h1{
+.header h1{
 
-        font-size:32px;
+font-size:34px;
 
-    }
+}
 
-    form{
+form{
 
-        flex-direction:column;
+flex-direction:column;
 
-        align-items:center;
+}
 
-    }
+input,
+button{
 
-    input{
+width:100%;
 
-        width:100%;
-
-    }
-
-    button{
-
-        width:100%;
-
-    }
+}
 
 }
