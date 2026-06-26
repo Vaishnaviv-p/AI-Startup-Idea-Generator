@@ -11,85 +11,86 @@
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <h1>🚀 AI Startup Idea Generator</h1>
+    <h1>🚀 AI Startup Idea Generator</h1>
 
-        <form action="/" method="GET">
+    <form action="/" method="GET">
 
-            <input
-                type="text"
-                name="industry"
-                placeholder="Enter Industry (Healthcare, Education, Finance...)"
-                required>
+        <input
+            type="text"
+            name="industry"
+            placeholder="Enter Industry (Healthcare, Education, Finance...)"
+            required>
 
-            <button type="submit">Generate</button>
+        <button type="submit">Generate</button>
 
-        </form>
+    </form>
 
-        {% if result %}
+    {% if result %}
 
-        <div class="card">
+    <div class="dashboard">
 
+        <div class="info-card">
             <h2>🚀 Startup Name</h2>
             <p>{{ result.name }}</p>
-
-            <hr>
-
-            <h2>💡 Startup Idea</h2>
-            <p>{{ result.idea }} for {{ result.industry }}</p>
-
-            <hr>
-
-            <h2>🎯 Target Customers</h2>
-            <p>{{ result.customer }}</p>
-
-            <hr>
-
-            <h2>💰 Revenue Model</h2>
-            <p>{{ result.revenue }}</p>
-
-            <hr>
-
-            <h2>📝 Startup Description</h2>
-            <p>{{ result.description }}</p>
-
-            <hr>
-
-            <h2>🌍 Target Market</h2>
-            <p>{{ result.target_market }}</p>
-
-            <hr>
-
-            <h2>💵 Estimated Investment</h2>
-            <p>{{ result.investment }}</p>
-
-            <hr>
-
-            <h2>⏳ Development Time</h2>
-            <p>{{ result.development_time }}</p>
-
-            <hr>
-
-            <h2>📈 Market Potential</h2>
-            <p>{{ result.market_potential }}</p>
-
-            <hr>
-
-            <h2>🏷️ Startup Category</h2>
-            <p>{{ result.category }}</p>
-
-            <hr>
-
-            <h2>⭐ Startup Score</h2>
-            <p>{{ result.score }}/100</p>
-
         </div>
 
-        {% endif %}
+        <div class="info-card">
+            <h2>💡 Startup Idea</h2>
+            <p>{{ result.idea }} for {{ result.industry }}</p>
+        </div>
+
+        <div class="info-card">
+            <h2>🎯 Target Customers</h2>
+            <p>{{ result.customer }}</p>
+        </div>
+
+        <div class="info-card">
+            <h2>💰 Revenue Model</h2>
+            <p>{{ result.revenue }}</p>
+        </div>
+
+        <div class="info-card">
+            <h2>📝 Startup Description</h2>
+            <p>{{ result.description }}</p>
+        </div>
+
+        <div class="info-card">
+            <h2>🌍 Target Market</h2>
+            <p>{{ result.target_market }}</p>
+        </div>
+
+        <div class="info-card">
+            <h2>💵 Estimated Investment</h2>
+            <p>{{ result.investment }}</p>
+        </div>
+
+        <div class="info-card">
+            <h2>⏳ Development Time</h2>
+            <p>{{ result.development_time }}</p>
+        </div>
+
+        <div class="info-card">
+            <h2>📈 Market Potential</h2>
+            <p>{{ result.market_potential }}</p>
+        </div>
+
+        <div class="info-card">
+            <h2>🏷️ Startup Category</h2>
+            <p>{{ result.category }}</p>
+        </div>
+
+        <div class="info-card score-card">
+            <h2>⭐ Startup Score</h2>
+            <p>{{ result.score }}/100</p>
+        </div>
 
     </div>
 
-</body>
+    {% endif %}
 
+</div>
+
+</body>
 </html>

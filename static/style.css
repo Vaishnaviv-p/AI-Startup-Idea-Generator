@@ -11,42 +11,38 @@
 body{
     background:linear-gradient(135deg,#4facfe,#00c6fb,#6a11cb);
     min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
     padding:40px 20px;
 }
 
 .container{
     width:100%;
-    max-width:900px;
+    max-width:1200px;
+    margin:auto;
 }
 
 h1{
     text-align:center;
-    color:#ffffff;
+    color:white;
     font-size:42px;
     margin-bottom:35px;
-    font-weight:700;
 }
 
 form{
     display:flex;
     justify-content:center;
     gap:15px;
-    margin-bottom:35px;
     flex-wrap:wrap;
+    margin-bottom:40px;
 }
 
 input{
-    width:430px;
+    width:420px;
     max-width:100%;
     padding:16px;
     border:none;
-    border-radius:12px;
     outline:none;
+    border-radius:12px;
     font-size:16px;
-    background:#ffffff;
     box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
@@ -60,7 +56,6 @@ button{
     font-weight:600;
     cursor:pointer;
     transition:.3s;
-    box-shadow:0 8px 20px rgba(37,99,235,.35);
 }
 
 button:hover{
@@ -68,114 +63,88 @@ button:hover{
     transform:translateY(-3px);
 }
 
-/* ---------- Premium Glass Card ---------- */
+/* Dashboard Grid */
 
-.card{
-
-    background:rgba(255,255,255,.45);
-
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,.35);
-
-    border-radius:24px;
-
-    padding:35px;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.25);
-
-    animation:fadeIn .6s ease;
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
 }
 
-.card h2{
+/* Individual Cards */
 
+.info-card{
+    background:rgba(255,255,255,.35);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.3);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+    transition:.35s;
+
+    animation:fadeUp .6s ease;
+}
+
+.info-card:hover{
+    transform:translateY(-8px) scale(1.02);
+    box-shadow:0 20px 35px rgba(0,0,0,.25);
+}
+
+.info-card h2{
     color:#2563eb;
-
-    font-size:22px;
-
-    margin-top:18px;
-    margin-bottom:10px;
+    font-size:21px;
+    margin-bottom:12px;
 }
 
-.card p{
-
+.info-card p{
     color:#1f2937;
-
-    font-size:18px;
-
-    line-height:1.8;
-
-    margin-bottom:16px;
-
-    font-weight:500;
+    font-size:17px;
+    line-height:1.6;
 }
 
-hr{
-
-    border:none;
-
-    border-top:1px solid rgba(0,0,0,.08);
-
-    margin:20px 0;
+.score-card{
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
 }
 
-/* Fade Animation */
+.score-card h2,
+.score-card p{
+    color:white;
+}
 
-@keyframes fadeIn{
+@keyframes fadeUp{
 
     from{
-
         opacity:0;
-
-        transform:translateY(20px);
-
+        transform:translateY(30px);
     }
 
     to{
-
         opacity:1;
-
         transform:translateY(0);
-
     }
 
 }
-
-/* Mobile */
 
 @media(max-width:768px){
 
     h1{
-
         font-size:32px;
-
     }
 
     form{
-
         flex-direction:column;
-
         align-items:center;
-
     }
 
-    input{
-
-        width:100%;
-
-    }
-
+    input,
     button{
-
         width:100%;
-
-    }
-
-    .card{
-
-        padding:25px;
-
     }
 
 }
