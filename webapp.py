@@ -24,7 +24,6 @@ def home():
             "TechSphere"
         ]
 
-        # Industry-specific data
         if industry.lower() == "healthcare":
 
             ideas = [
@@ -53,6 +52,8 @@ def home():
                 "Monitors patients remotely using AI.",
                 "Provides healthcare analytics for hospitals."
             ]
+
+            target_market = "Global"
 
         elif industry.lower() == "education":
 
@@ -83,6 +84,8 @@ def home():
                 "Improves classroom engagement using AI."
             ]
 
+            target_market = "National"
+
         elif industry.lower() == "finance":
 
             ideas = [
@@ -112,6 +115,8 @@ def home():
                 "Helps customers manage budgets."
             ]
 
+            target_market = "Global"
+
         elif industry.lower() == "agriculture":
 
             ideas = [
@@ -140,6 +145,8 @@ def home():
                 "Optimizes irrigation systems.",
                 "Improves agricultural productivity."
             ]
+
+            target_market = "Rural & Global"
 
         else:
 
@@ -171,12 +178,15 @@ def home():
                 "Connects businesses with AI solutions."
             ]
 
+            target_market = "Global"
+
         result = {
             "name": random.choice(startup_names),
             "idea": random.choice(ideas),
             "customer": random.choice(customers),
             "revenue": random.choice(revenue_models),
             "description": random.choice(descriptions),
+            "target_market": target_market,
             "score": random.randint(75, 100),
             "industry": industry
         }
