@@ -82,8 +82,20 @@
         </div>
 
         <div class="info-card score-card">
+
             <h2>⭐ Startup Score</h2>
-            <p>{{ result.score }}/100</p>
+
+            <h3>{{ result.score }}/100</h3>
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    style="width: {{ result.score }}%;"></div>
+                </div>
+
+            </div>
+
         </div>
 
     </div>
