@@ -26,13 +26,13 @@
             placeholder="Enter Industry (Healthcare, Education, Finance...)"
             required>
 
-        <button type="submit">
-            🚀 Generate
-        </button>
+        <button type="submit">🚀 Generate</button>
 
     </form>
 
     {% if result %}
+
+    <!-- Dashboard -->
 
     <div class="dashboard">
 
@@ -82,7 +82,7 @@
         </div>
 
         <div class="info-card">
-            <h2>🏷 Startup Category</h2>
+            <h2>🏷️ Startup Category</h2>
             <span class="badge">{{ result.category }}</span>
         </div>
 
@@ -96,6 +96,38 @@
                 <div class="progress-fill"
                      style="width: {{ result.score }}%;">
                 </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- SWOT Analysis -->
+
+    <div class="swot-section">
+
+        <h1>📊 SWOT Analysis</h1>
+
+        <div class="dashboard">
+
+            <div class="info-card">
+                <h2>💪 Strength</h2>
+                <p>{{ result.strength }}</p>
+            </div>
+
+            <div class="info-card">
+                <h2>⚠️ Weakness</h2>
+                <p>{{ result.weakness }}</p>
+            </div>
+
+            <div class="info-card">
+                <h2>🚀 Opportunity</h2>
+                <p>{{ result.opportunity }}</p>
+            </div>
+
+            <div class="info-card">
+                <h2>🚨 Threat</h2>
+                <p>{{ result.threat }}</p>
             </div>
 
         </div>

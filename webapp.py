@@ -134,8 +134,7 @@ def home():
             development_time = "10 Months"
             market_potential = "Very High"
             category = "FinTech"
-
-        # ---------------- AGRICULTURE ----------------
+                    # ---------------- AGRICULTURE ----------------
 
         elif industry.lower() == "agriculture":
 
@@ -171,7 +170,8 @@ def home():
             development_time = "7 Months"
             market_potential = "Medium"
             category = "AgriTech"
-                    # ---------------- DEFAULT ----------------
+
+        # ---------------- DEFAULT ----------------
 
         else:
 
@@ -209,6 +209,36 @@ def home():
             market_potential = "High"
             category = "Artificial Intelligence"
 
+        # ---------------- SWOT ANALYSIS ----------------
+
+        strengths = [
+            "Strong AI-driven solution",
+            "High market demand",
+            "Scalable business model",
+            "Innovative technology"
+        ]
+
+        weaknesses = [
+            "High initial investment",
+            "Requires continuous updates",
+            "Competitive market",
+            "Needs skilled developers"
+        ]
+
+        opportunities = [
+            "Growing AI adoption",
+            "Global expansion",
+            "Government support",
+            "Enterprise partnerships"
+        ]
+
+        threats = [
+            "Rapid technology changes",
+            "Cybersecurity risks",
+            "New competitors",
+            "Changing regulations"
+        ]
+
         result = {
             "name": random.choice(startup_names),
             "idea": random.choice(ideas),
@@ -221,7 +251,12 @@ def home():
             "market_potential": market_potential,
             "category": category,
             "score": random.randint(75, 100),
-            "industry": industry
+            "industry": industry,
+
+            "strength": random.choice(strengths),
+            "weakness": random.choice(weaknesses),
+            "opportunity": random.choice(opportunities),
+            "threat": random.choice(threats)
         }
 
     return render_template("index.html", result=result)
