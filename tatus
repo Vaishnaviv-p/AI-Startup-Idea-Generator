@@ -1,0 +1,12 @@
+[33m4680ea0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Improved UI with modern CSS
+[33m7b10786[m Styled AI Startup Generator Web App
+[33m2d6031d[m Added startup score generator
+[33mb36a62e[m Added startup description generator
+[33mc185474[m Added revenue model generator
+[33m46b9221[m Added target customers
+[33md7c59d3[m Added startup name generator
+[33m1746b62[m message
+[33m7e861ab[m Added more startup ideas
+[33m5272332[m Added startup idea input
+[33m6ce442e[m Added app.py
+[33ma5da81b[m Initial commit
