@@ -54,6 +54,7 @@ def home():
             ]
 
             target_market = "Global"
+            investment = "₹15 Lakhs"
 
         elif industry.lower() == "education":
 
@@ -85,6 +86,7 @@ def home():
             ]
 
             target_market = "National"
+            investment = "₹8 Lakhs"
 
         elif industry.lower() == "finance":
 
@@ -116,6 +118,7 @@ def home():
             ]
 
             target_market = "Global"
+            investment = "₹25 Lakhs"
 
         elif industry.lower() == "agriculture":
 
@@ -147,6 +150,7 @@ def home():
             ]
 
             target_market = "Rural & Global"
+            investment = "₹12 Lakhs"
 
         else:
 
@@ -179,6 +183,7 @@ def home():
             ]
 
             target_market = "Global"
+            investment = "₹10 Lakhs"
 
         result = {
             "name": random.choice(startup_names),
@@ -187,12 +192,12 @@ def home():
             "revenue": random.choice(revenue_models),
             "description": random.choice(descriptions),
             "target_market": target_market,
+            "investment": investment,
             "score": random.randint(75, 100),
             "industry": industry
         }
 
     return render_template("index.html", result=result)
-
 
 if __name__ == "__main__":
     app.run(debug=True)
