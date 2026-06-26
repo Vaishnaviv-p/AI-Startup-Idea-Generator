@@ -1,0 +1,116 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#4facfe,#00f2fe,#6a11cb);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+.container{
+    width:100%;
+    max-width:900px;
+}
+
+h1{
+    text-align:center;
+    color:white;
+    font-size:38px;
+    margin-bottom:30px;
+    font-weight:700;
+}
+
+form{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+}
+
+input{
+    width:420px;
+    max-width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+    font-size:16px;
+}
+
+button{
+    padding:15px 30px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}
+
+.card{
+    background:white;
+    border-radius:18px;
+    padding:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+}
+
+.card h2{
+    color:#2563eb;
+    margin-top:18px;
+    margin-bottom:8px;
+    font-size:22px;
+}
+
+.card p{
+    font-size:18px;
+    color:#333;
+    margin-bottom:15px;
+}
+
+hr{
+    border:none;
+    border-top:1px solid #e5e7eb;
+    margin:18px 0;
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:30px;
+    }
+
+    form{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    input{
+        width:100%;
+    }
+
+    button{
+        width:100%;
+    }
+
+    .card{
+        padding:20px;
+    }
+}
