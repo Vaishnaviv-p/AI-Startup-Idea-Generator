@@ -24,6 +24,7 @@ def home():
             "TechSphere"
         ]
 
+        # ---------------- HEALTHCARE ----------------
         if industry.lower() == "healthcare":
 
             ideas = [
@@ -55,7 +56,9 @@ def home():
 
             target_market = "Global"
             investment = "₹15 Lakhs"
+            development_time = "8 Months"
 
+        # ---------------- EDUCATION ----------------
         elif industry.lower() == "education":
 
             ideas = [
@@ -87,6 +90,9 @@ def home():
 
             target_market = "National"
             investment = "₹8 Lakhs"
+            development_time = "5 Months"
+
+        # ---------------- FINANCE ----------------
 
         elif industry.lower() == "finance":
 
@@ -119,6 +125,9 @@ def home():
 
             target_market = "Global"
             investment = "₹25 Lakhs"
+            development_time = "10 Months"
+
+        # ---------------- AGRICULTURE ----------------
 
         elif industry.lower() == "agriculture":
 
@@ -151,6 +160,8 @@ def home():
 
             target_market = "Rural & Global"
             investment = "₹12 Lakhs"
+            development_time = "7 Months"
+                    # ---------------- DEFAULT ----------------
 
         else:
 
@@ -184,6 +195,7 @@ def home():
 
             target_market = "Global"
             investment = "₹10 Lakhs"
+            development_time = "6 Months"
 
         result = {
             "name": random.choice(startup_names),
@@ -193,11 +205,13 @@ def home():
             "description": random.choice(descriptions),
             "target_market": target_market,
             "investment": investment,
+            "development_time": development_time,
             "score": random.randint(75, 100),
             "industry": industry
         }
 
     return render_template("index.html", result=result)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

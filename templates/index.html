@@ -11,69 +11,75 @@
 
 <body>
 
-<h1>🚀 AI Startup Idea Generator</h1>
+    <h1>🚀 AI Startup Idea Generator</h1>
 
-<form action="/" method="GET">
+    <form action="/" method="GET">
 
-<input
-type="text"
-name="industry"
-placeholder="Enter Industry (Healthcare, Education, Finance...)"
-required>
+        <input
+            type="text"
+            name="industry"
+            placeholder="Enter Industry (Healthcare, Education, Finance...)"
+            required>
 
-<button type="submit">
-Generate
-</button>
+        <button type="submit">
+            Generate
+        </button>
 
-</form>
+    </form>
 
-<br>
+    <br>
 
-{% if result %}
+    {% if result %}
 
-<div class="card">
+    <div class="card">
 
-<h2>🚀 Startup Name</h2>
-<p>{{ result.name }}</p>
+        <h2>🚀 Startup Name</h2>
+        <p>{{ result.name }}</p>
 
-<hr>
+        <hr>
 
-<h2>💡 Startup Idea</h2>
-<p>{{ result.idea }} for {{ result.industry }}</p>
+        <h2>💡 Startup Idea</h2>
+        <p>{{ result.idea }} for {{ result.industry }}</p>
 
-<hr>
+        <hr>
 
-<h2>🎯 Target Customers</h2>
-<p>{{ result.customer }}</p>
+        <h2>🎯 Target Customers</h2>
+        <p>{{ result.customer }}</p>
 
-<hr>
+        <hr>
 
-<h2>💰 Revenue Model</h2>
-<p>{{ result.revenue }}</p>
+        <h2>💰 Revenue Model</h2>
+        <p>{{ result.revenue }}</p>
 
-<hr>
+        <hr>
 
-<h2>📝 Startup Description</h2>
-<p>{{ result.description }}</p>
+        <h2>📝 Startup Description</h2>
+        <p>{{ result.description }}</p>
 
-<hr>
+        <hr>
 
-<h2>🌍 Target Market</h2>
-<p>{{ result.target_market }}</p>
+        <h2>🌍 Target Market</h2>
+        <p>{{ result.target_market }}</p>
 
-<hr>
+        <hr>
 
-<h2>💵 Estimated Investment</h2>
-<p>{{ result.investment }}</p>
+        <h2>💵 Estimated Investment</h2>
+        <p>{{ result.investment }}</p>
 
-<hr>
+        <hr>
 
-<h2>📈 Startup Score</h2>
-<p>{{ result.score }}/100</p>
+        <h2>⏳ Development Time</h2>
+        <p>{{ result.development_time }}</p>
 
-</div>
+        <hr>
 
-{% endif %}
+        <h2>⭐ Startup Score</h2>
+        <p>{{ result.score }}/100</p>
+
+    </div>
+
+    {% endif %}
 
 </body>
+
 </html>
