@@ -210,3 +210,18 @@ width:100%;
     text-align:center;
     margin-bottom:30px;
 }
+/* ---------- Roadmap ---------- */
+
+.roadmap-section{
+
+    margin-top:60px;
+
+}
+
+.roadmap-section h1{
+
+    color:white;
+    text-align:center;
+    margin-bottom:30px;
+
+}

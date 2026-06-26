@@ -133,6 +133,29 @@
         </div>
 
     </div>
+    <!-- Startup Roadmap -->
+
+<div class="roadmap-section">
+
+    <h1>📅 Startup Roadmap</h1>
+
+    <div class="dashboard">
+
+        {% for step in result.roadmap %}
+
+        <div class="info-card">
+
+            <h2>{{ step.split(' - ')[0] }}</h2>
+
+            <p>{{ step.split(' - ')[1] }}</p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
 
     {% endif %}
 
