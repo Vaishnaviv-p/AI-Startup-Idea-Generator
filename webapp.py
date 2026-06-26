@@ -25,6 +25,7 @@ def home():
         ]
 
         # ---------------- HEALTHCARE ----------------
+
         if industry.lower() == "healthcare":
 
             ideas = [
@@ -57,8 +58,10 @@ def home():
             target_market = "Global"
             investment = "₹15 Lakhs"
             development_time = "8 Months"
+            market_potential = "Very High"
 
         # ---------------- EDUCATION ----------------
+
         elif industry.lower() == "education":
 
             ideas = [
@@ -91,6 +94,7 @@ def home():
             target_market = "National"
             investment = "₹8 Lakhs"
             development_time = "5 Months"
+            market_potential = "High"
 
         # ---------------- FINANCE ----------------
 
@@ -126,6 +130,7 @@ def home():
             target_market = "Global"
             investment = "₹25 Lakhs"
             development_time = "10 Months"
+            market_potential = "Very High"
 
         # ---------------- AGRICULTURE ----------------
 
@@ -161,6 +166,7 @@ def home():
             target_market = "Rural & Global"
             investment = "₹12 Lakhs"
             development_time = "7 Months"
+            market_potential = "Medium"
                     # ---------------- DEFAULT ----------------
 
         else:
@@ -196,6 +202,7 @@ def home():
             target_market = "Global"
             investment = "₹10 Lakhs"
             development_time = "6 Months"
+            market_potential = "High"
 
         result = {
             "name": random.choice(startup_names),
@@ -206,6 +213,7 @@ def home():
             "target_market": target_market,
             "investment": investment,
             "development_time": development_time,
+            "market_potential": market_potential,
             "score": random.randint(75, 100),
             "industry": industry
         }
