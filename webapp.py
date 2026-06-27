@@ -76,18 +76,22 @@ def home():
             "market_potential": data["market_potential"],
             "category": data["category"],
 
-            "score": random.randint(75,100),
+            "score": random.randint(75, 100),
 
             "strength": random.choice(strengths),
             "weakness": random.choice(weaknesses),
             "opportunity": random.choice(opportunities),
             "threat": random.choice(threats),
 
-            "roadmap": roadmap
+            "roadmap": roadmap,
+
+            # ⭐ NEW FEATURE (Version 13.3)
+            "business_tips": data["business_tips"]
 
         }
 
     return render_template("index.html", result=result)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

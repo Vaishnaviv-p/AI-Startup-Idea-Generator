@@ -157,7 +157,31 @@
 
 </div>
 
-    {% endif %}
+<!-- Business Tips -->
+
+<div class="tips-section">
+
+    <h1>💡 AI Business Tips</h1>
+
+    <div class="dashboard">
+
+        {% for tip in result.business_tips %}
+
+        <div class="info-card">
+
+            <h2>💡 Tip {{ loop.index }}</h2>
+
+            <p>{{ tip }}</p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endif %}
 
 </div>
 
