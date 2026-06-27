@@ -90,13 +90,23 @@
 
             <h2>⭐ Startup Score</h2>
 
-            <h3>{{ result.score }}/100</h3>
+<h3>{{ result.score }}/100</h3>
 
-            <div class="progress-bar">
-                <div class="progress-fill"
-                     style="width: {{ result.score }}%;">
-                </div>
-            </div>
+<div class="progress-bar">
+    <div class="progress-fill"
+         style="width: {{ result.score }}%;">
+    </div>
+</div>
+
+<br>
+
+<h2>🏆 Startup Success Meter</h2>
+
+<div class="success-box">
+
+    <h3>{{ result.success_level }}</h3>
+
+</div>
 
         </div>
 

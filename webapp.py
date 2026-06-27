@@ -60,6 +60,19 @@ def home():
             "Month 6 - Official Launch"
         ]
 
+        # ⭐ Success Score
+
+        score = random.randint(75, 100)
+
+        if score >= 90:
+            success_level = "🚀 Excellent Chance of Success"
+        elif score >= 80:
+            success_level = "🌟 Very Good Potential"
+        elif score >= 70:
+            success_level = "👍 Good Potential"
+        else:
+            success_level = "⚠️ Needs Improvement"
+
         result = {
 
             "industry": industry.title(),
@@ -76,7 +89,8 @@ def home():
             "market_potential": data["market_potential"],
             "category": data["category"],
 
-            "score": random.randint(75, 100),
+            "score": score,
+            "success_level": success_level,
 
             "strength": random.choice(strengths),
             "weakness": random.choice(weaknesses),
@@ -85,13 +99,11 @@ def home():
 
             "roadmap": roadmap,
 
-            # ⭐ NEW FEATURE (Version 13.3)
             "business_tips": data["business_tips"]
 
         }
 
     return render_template("index.html", result=result)
-
 
 if __name__ == "__main__":
     app.run(debug=True)

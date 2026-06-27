@@ -240,3 +240,17 @@ width:100%;
     margin-bottom:30px;
 
 }
+/* ---------- Success Meter ---------- */
+
+.success-box{
+
+    margin-top:15px;
+    padding:18px;
+    border-radius:12px;
+    background:linear-gradient(135deg,#22c55e,#16a34a);
+    color:white;
+    text-align:center;
+    font-weight:bold;
+    font-size:20px;
+
+}
