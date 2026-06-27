@@ -1,11 +1,17 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, send_file
 import random
 from startup_data import startup_data, startup_names
+from pdf_generator import create_pdf
 
 app = Flask(__name__)
 
+latest_result = None
+
+
 @app.route("/")
 def home():
+
+    global latest_result
 
     result = None
     industry = request.args.get("industry")
@@ -18,8 +24,6 @@ def home():
             data = startup_data[industry]
         else:
             data = startup_data["default"]
-
-        # SWOT Analysis
 
         strengths = [
             "Strong AI-driven solution",
@@ -49,8 +53,6 @@ def home():
             "Changing regulations"
         ]
 
-        # Startup Roadmap
-
         roadmap = [
             "Month 1 - Market Research",
             "Month 2 - Build MVP",
@@ -59,8 +61,6 @@ def home():
             "Month 5 - Scale Business",
             "Month 6 - Official Launch"
         ]
-
-        # ⭐ Success Score
 
         score = random.randint(75, 100)
 
@@ -98,12 +98,27 @@ def home():
             "threat": random.choice(threats),
 
             "roadmap": roadmap,
-
             "business_tips": data["business_tips"]
 
         }
 
+        latest_result = result
+
     return render_template("index.html", result=result)
+
+
+@app.route("/download")
+def download():
+
+    global latest_result
+
+    if latest_result is None:
+        return "Generate a startup idea first."
+
+    filename = create_pdf(latest_result)
+
+    return send_file(filename, as_attachment=True)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
