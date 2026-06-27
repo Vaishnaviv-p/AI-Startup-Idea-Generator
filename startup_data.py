@@ -47,6 +47,11 @@ startup_data = {
     "development_time": "8 Months",
     "market_potential": "Very High",
     "category": "Healthcare Technology",
+    "competitors": [
+    "Practo",
+    "Apollo 24/7",
+    "Tata 1mg"
+],
 
     "business_tips": [
         "Ensure patient data privacy.",
@@ -91,6 +96,11 @@ startup_data = {
     "development_time": "5 Months",
     "market_potential": "High",
     "category": "Education Technology",
+    "competitors": [
+    "BYJU'S",
+    "Unacademy",
+    "Coursera"
+],
 
     "business_tips": [
         "Create engaging learning experiences.",
@@ -135,7 +145,11 @@ startup_data = {
     "development_time": "10 Months",
     "market_potential": "Very High",
     "category": "FinTech",
-
+"competitors": [
+    "Zerodha",
+    "Groww",
+    "Paytm Money"
+],
     "business_tips": [
         "Focus on strong security measures.",
         "Follow financial regulations.",
@@ -178,6 +192,11 @@ startup_data = {
     "development_time": "7 Months",
     "market_potential": "Medium",
     "category": "AgriTech",
+    "competitors": [
+    "DeHaat",
+    "CropIn",
+    "AgroStar"
+],
 
     "business_tips": [
         "Collaborate with local farmers.",
@@ -222,6 +241,11 @@ startup_data = {
     "development_time": "6 Months",
     "market_potential": "High",
     "category": "Artificial Intelligence",
+    "competitors": [
+    "OpenAI",
+    "Google",
+    "Microsoft"
+],
 
     "business_tips": [
         "Validate your idea before scaling.",

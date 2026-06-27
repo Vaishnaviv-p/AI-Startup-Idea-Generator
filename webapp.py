@@ -64,6 +64,7 @@ def home():
 
         score = random.randint(75, 100)
 
+        # Success Meter
         if score >= 90:
             success_level = "🚀 Excellent Chance of Success"
         elif score >= 80:
@@ -72,6 +73,23 @@ def home():
             success_level = "👍 Good Potential"
         else:
             success_level = "⚠️ Needs Improvement"
+
+        # Funding Recommendation
+        if score >= 95:
+            funding = "Venture Capital"
+            funding_reason = "The startup has excellent growth potential and is suitable for VC funding."
+
+        elif score >= 90:
+            funding = "Angel Investment"
+            funding_reason = "The startup shows strong potential and is attractive to angel investors."
+
+        elif score >= 80:
+            funding = "Seed Funding"
+            funding_reason = "The startup is ideal for early-stage seed investment."
+
+        else:
+            funding = "Bootstrapping"
+            funding_reason = "The startup can begin with personal funds before seeking investors."
 
         result = {
 
@@ -92,21 +110,23 @@ def home():
             "score": score,
             "success_level": success_level,
 
+            "funding": funding,
+            "funding_reason": funding_reason,
+
             "strength": random.choice(strengths),
             "weakness": random.choice(weaknesses),
             "opportunity": random.choice(opportunities),
             "threat": random.choice(threats),
 
             "roadmap": roadmap,
-            "business_tips": data["business_tips"]
+            "business_tips": data["business_tips"],
+            "competitors": data["competitors"]
 
         }
 
         latest_result = result
 
     return render_template("index.html", result=result)
-
-
 @app.route("/download")
 def download():
 

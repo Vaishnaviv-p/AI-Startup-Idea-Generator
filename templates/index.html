@@ -86,29 +86,53 @@
             <span class="badge">{{ result.category }}</span>
         </div>
 
-        <div class="info-card score-card">
+<!-- Startup Score -->
 
-            <h2>⭐ Startup Score</h2>
+<div class="info-card score-card">
 
-<h3>{{ result.score }}/100</h3>
+    <h2>⭐ Startup Score</h2>
 
-<div class="progress-bar">
-    <div class="progress-fill"
-         style="width: {{ result.score }}%;">
-    </div>
-</div>
+    <h3>{{ result.score }}/100</h3>
 
-<br>
+    <div class="progress-bar">
 
-<h2>🏆 Startup Success Meter</h2>
-
-<div class="success-box">
-
-    <h3>{{ result.success_level }}</h3>
-
-</div>
-
+        <div class="progress-fill"
+             style="width: {{ result.score }}%;">
         </div>
+
+    </div>
+
+</div>
+
+<!-- Success Meter -->
+
+<div class="info-card">
+
+    <h2>🏆 Startup Success Meter</h2>
+
+    <div class="success-box">
+
+        <h3>{{ result.success_level }}</h3>
+
+    </div>
+
+</div>
+
+<!-- Funding Recommendation -->
+
+<div class="info-card">
+
+    <h2>💰 Recommended Funding</h2>
+
+    <div class="funding-box">
+
+        <h3>{{ result.funding }}</h3>
+
+        <p>{{ result.funding_reason }}</p>
+
+    </div>
+
+</div>
 
     </div>
 
@@ -186,6 +210,42 @@
         </div>
 
         {% endfor %}
+
+    </div>
+
+</div>
+<!-- Competitor Analysis -->
+
+<div class="tips-section">
+
+    <h1>🏢 Competitor Analysis</h1>
+
+    <div class="dashboard">
+
+        {% for company in result.competitors %}
+
+        <div class="info-card">
+
+            <h2>🏢 Competitor {{ loop.index }}</h2>
+
+            <p>{{ company }}</p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    <br>
+
+    <div class="info-card">
+
+        <h2>📊 Why Analyze Competitors?</h2>
+
+        <p>
+            Understanding your competitors helps you identify market gaps,
+            improve your product, and build a stronger startup strategy.
+        </p>
 
     </div>
 
