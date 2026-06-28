@@ -47,7 +47,17 @@
 
     <!-- Dashboard -->
 
-    <div class="dashboard">
+    <!-- Dashboard -->
+
+<div class="section-title">
+
+    <h1>📊 Startup Overview</h1>
+
+    <p>Your AI-generated business summary</p>
+
+</div>
+
+<div class="dashboard">
 
         <div class="info-card">
             <h2>🚀 Startup Name</h2>
@@ -151,38 +161,40 @@
 
     <!-- SWOT Analysis -->
 
-    <div class="swot-section">
+    <details class="accordion" open>
 
-        <h1>📊 SWOT Analysis</h1>
+<summary>📊 SWOT Analysis</summary>
 
-        <div class="dashboard">
+<div class="dashboard">
 
-            <div class="info-card">
-                <h2>💪 Strength</h2>
-                <p>{{ result.strength }}</p>
-            </div>
-
-            <div class="info-card">
-                <h2>⚠️ Weakness</h2>
-                <p>{{ result.weakness }}</p>
-            </div>
-
-            <div class="info-card">
-                <h2>🚀 Opportunity</h2>
-                <p>{{ result.opportunity }}</p>
-            </div>
-
-            <div class="info-card">
-                <h2>🚨 Threat</h2>
-                <p>{{ result.threat }}</p>
-            </div>
-
-        </div>
-
+    <div class="info-card">
+        <h2>💪 Strength</h2>
+        <p>{{ result.strength }}</p>
     </div>
+
+    <div class="info-card">
+        <h2>⚠️ Weakness</h2>
+        <p>{{ result.weakness }}</p>
+    </div>
+
+    <div class="info-card">
+        <h2>🚀 Opportunity</h2>
+        <p>{{ result.opportunity }}</p>
+    </div>
+
+    <div class="info-card">
+        <h2>🚨 Threat</h2>
+        <p>{{ result.threat }}</p>
+    </div>
+
+</div>
+
+</details>
     <!-- Startup Roadmap -->
 
-<div class="roadmap-section">
+<details class="accordion">
+
+<summary>📅 Startup Roadmap</summary>
 
     <h1>📅 Startup Roadmap</h1>
 
@@ -202,11 +214,13 @@
 
     </div>
 
-</div>
+</details>
 
 <!-- Business Tips -->
 
-<div class="tips-section">
+<details class="accordion">
+
+<summary>💡 AI Business Tips</summary>
 
     <h1>💡 AI Business Tips</h1>
 
@@ -226,10 +240,12 @@
 
     </div>
 
-</div>
+</details>
 <!-- Competitor Analysis -->
 
-<div class="tips-section">
+<details class="accordion">
+
+<summary>🏢 Competitor Analysis</summary>
 
     <h1>🏢 Competitor Analysis</h1>
 
@@ -262,10 +278,10 @@
 
     </div>
 
-</div>
+</details>
 <br>
 
-<div style="text-align:center; margin-top:40px;">
+<div style="text-align:center; margin:60px 0;"></div>
 
     <a href="/download">
 
