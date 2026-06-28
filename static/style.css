@@ -6,6 +6,24 @@ padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
+/* Smooth Theme Transition */
+
+body,
+.hero,
+.info-card,
+.feature-card,
+.stat-card,
+.footer,
+.accordion,
+button,
+input,
+.badge,
+.success-box,
+.funding-box{
+
+    transition:all .45s ease;
+
+}
 
 body{
 
@@ -671,5 +689,203 @@ width:100%;
     opacity:.9;
 
     font-size:18px;
+
+}
+/* ===========================
+   THEME TOGGLE
+=========================== */
+
+.theme-toggle{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin-bottom:20px;
+
+}
+
+.theme-toggle button{
+
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+
+    color:white;
+
+    padding:12px 28px;
+
+    border:none;
+
+    border-radius:30px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.theme-toggle button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(37,99,235,.35);
+
+}
+/* ===========================
+   LIGHT MODE
+=========================== */
+
+body.light-mode{
+
+    background:linear-gradient(
+    135deg,
+    #f8fafc,
+    #e2e8f0,
+    #cbd5e1);
+
+}
+
+body.light-mode .hero{
+
+    background:rgba(255,255,255,.95);
+
+}
+
+body.light-mode .hero h1{
+
+    color:#1e3a8a;
+
+}
+
+body.light-mode .hero p{
+
+    color:#374151;
+
+}
+
+body.light-mode .section-title h1{
+
+    color:#1e3a8a;
+
+}
+
+body.light-mode .section-title p{
+
+    color:#374151;
+
+}
+
+body.light-mode .info-card{
+
+    background:white;
+
+}
+
+body.light-mode .info-card h2{
+
+    color:#1e3a8a;
+
+}
+
+body.light-mode .info-card p{
+
+    color:#374151;
+
+}
+
+body.light-mode .accordion{
+
+    background:white;
+
+}
+
+body.light-mode .accordion summary{
+
+    color:#1e3a8a;
+
+}
+
+body.light-mode .feature-card{
+
+    background:white;
+
+}
+
+body.light-mode .feature-card h2{
+
+    color:#1e3a8a;
+
+}
+
+body.light-mode .feature-card p{
+
+    color:#374151;
+
+}
+
+body.light-mode .stat-card{
+
+    background:white;
+
+}
+
+body.light-mode .stat-card h2{
+
+    color:#2563eb;
+
+}
+
+body.light-mode .stat-card p{
+
+    color:#374151;
+
+}
+
+body.light-mode .footer{
+
+    background:white;
+
+}
+
+body.light-mode .footer h2{
+
+    color:#1e3a8a;
+
+}
+
+body.light-mode .footer p{
+
+    color:#374151;
+
+}
+
+body.light-mode .footer-links span{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+body.light-mode input{
+
+    background:white;
+
+    color:#1f2937;
+
+    border:1px solid #d1d5db;
+
+}
+
+body.light-mode input::placeholder{
+
+    color:#6b7280;
+
+}
+body.light-mode .badge{
+
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
 
 }

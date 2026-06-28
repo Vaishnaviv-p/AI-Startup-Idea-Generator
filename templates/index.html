@@ -16,6 +16,15 @@
    <!-- Hero Section -->
 
 <div class="hero">
+    <div class="theme-toggle">
+
+    <button id="themeButton" onclick="toggleTheme()">
+
+        🌙 Dark Mode
+
+    </button>
+
+</div>
 
     <div class="hero-content">
 
@@ -377,8 +386,41 @@
 
 {% endif %}
 
+<!-- Footer -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <h2>🚀 AI Startup Idea Generator</h2>
+
+        <p>
+            Generate innovative AI startup ideas, analyze business potential,
+            and download professional startup reports.
+        </p>
+
+        <div class="footer-links">
+
+            <span>🐍 Python</span>
+            <span>⚡ Flask</span>
+            <span>🤖 AI Powered</span>
+            <span>💻 Developed by Vaishnavi</span>
+
+        </div>
+
+        <p class="copyright">
+
+            © 2026 AI Startup Idea Generator • Developed with ❤️ by Vaishnavi
+
+        </p>
+
+    </div>
+
+</footer>
+
 </div>
 
-</body>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
+</body>
 </html>
