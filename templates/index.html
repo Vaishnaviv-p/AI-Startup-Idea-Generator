@@ -13,23 +13,36 @@
 
 <div class="container">
 
-    <div class="header">
+   <!-- Hero Section -->
+
+<div class="hero">
+
+    <div class="hero-content">
+
         <h1>🚀 AI Startup Idea Generator</h1>
-        <p>Create powerful AI startup ideas in seconds.</p>
+
+        <p>
+            Generate innovative AI startup ideas, analyze business potential,
+            explore competitors, and download professional startup reports.
+        </p>
+
+        <form action="/" method="GET" class="hero-form">
+
+            <input
+                type="text"
+                name="industry"
+                placeholder="🔍 Enter an Industry (Healthcare, Finance, Education...)"
+                required>
+
+            <button type="submit">
+                🚀 Generate Startup
+            </button>
+
+        </form>
+
     </div>
 
-    <form action="/" method="GET">
-
-        <input
-            type="text"
-            name="industry"
-            placeholder="Enter Industry (Healthcare, Education, Finance...)"
-            required>
-
-        <button type="submit">🚀 Generate</button>
-
-    </form>
-
+</div>
     {% if result %}
 
     <!-- Dashboard -->
