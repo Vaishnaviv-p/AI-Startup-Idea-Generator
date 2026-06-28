@@ -1,9 +1,19 @@
-from flask import Flask, request, render_template, send_file
+from flask import Flask, request, render_template, send_file, redirect
 import random
+
 from startup_data import startup_data, startup_names
 from pdf_generator import create_pdf
+from database import db, Startup
 
 app = Flask(__name__)
+
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///startup.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
+db.init_app(app)
+
+with app.app_context():
+    db.create_all()
 
 latest_result = None
 
@@ -14,6 +24,8 @@ def home():
     global latest_result
 
     result = None
+    latest_id = None
+
     industry = request.args.get("industry")
 
     if industry:
@@ -64,7 +76,6 @@ def home():
 
         score = random.randint(75, 100)
 
-        # Success Meter
         if score >= 90:
             success_level = "🚀 Excellent Chance of Success"
         elif score >= 80:
@@ -74,25 +85,31 @@ def home():
         else:
             success_level = "⚠️ Needs Improvement"
 
-        # Funding Recommendation
         if score >= 95:
             funding = "Venture Capital"
-            funding_reason = "The startup has excellent growth potential and is suitable for VC funding."
+            funding_reason = (
+                "The startup has excellent growth potential and is suitable for VC funding."
+            )
 
         elif score >= 90:
             funding = "Angel Investment"
-            funding_reason = "The startup shows strong potential and is attractive to angel investors."
+            funding_reason = (
+                "The startup shows strong potential and is attractive to angel investors."
+            )
 
         elif score >= 80:
             funding = "Seed Funding"
-            funding_reason = "The startup is ideal for early-stage seed investment."
+            funding_reason = (
+                "The startup is ideal for early-stage seed investment."
+            )
 
         else:
             funding = "Bootstrapping"
-            funding_reason = "The startup can begin with personal funds before seeking investors."
+            funding_reason = (
+                "The startup can begin with personal funds before seeking investors."
+            )
 
         result = {
-
             "industry": industry.title(),
 
             "name": random.choice(startup_names),
@@ -121,12 +138,83 @@ def home():
             "roadmap": roadmap,
             "business_tips": data["business_tips"],
             "competitors": data["competitors"]
-
         }
 
         latest_result = result
 
-    return render_template("index.html", result=result)
+        startup = Startup(
+            industry=result["industry"],
+            name=result["name"],
+            idea=result["idea"],
+            customer=result["customer"],
+            revenue=result["revenue"],
+            description=result["description"],
+            score=result["score"]
+        )
+
+        db.session.add(startup)
+        db.session.commit()
+
+        latest_id = startup.id
+
+    return render_template(
+        "index.html",
+        result=result,
+        latest_id=latest_id
+    )
+
+
+@app.route("/history")
+def history():
+
+    search = request.args.get("search")
+    favorites = request.args.get("favorites")
+
+    query = Startup.query
+
+    if favorites:
+        query = query.filter_by(favorite=True)
+
+    if search:
+        query = query.filter(
+            Startup.industry.contains(search) |
+            Startup.name.contains(search) |
+            Startup.idea.contains(search)
+        )
+
+    startups = query.order_by(Startup.id.desc()).all()
+
+    return render_template(
+        "history.html",
+        startups=startups,
+        search=search
+    )
+
+
+@app.route("/favorite/<int:id>")
+def favorite(id):
+
+    startup = Startup.query.get_or_404(id)
+
+    startup.favorite = not startup.favorite
+
+    db.session.commit()
+
+    return redirect("/history")
+
+
+@app.route("/delete/<int:id>")
+def delete(id):
+
+    startup = Startup.query.get_or_404(id)
+
+    db.session.delete(startup)
+
+    db.session.commit()
+
+    return redirect("/history")
+
+
 @app.route("/download")
 def download():
 
@@ -142,3 +230,4 @@ def download():
 
 if __name__ == "__main__":
     app.run(debug=True)
+

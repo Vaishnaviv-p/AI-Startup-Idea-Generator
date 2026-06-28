@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Startup History</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <h1>📜 Startup History</h1>
+
+        <p>All Generated Startup Ideas</p>
+
+        <br>
+
+        <div class="search-box">
+
+            <form action="/history" method="GET">
+
+                <input
+                    type="text"
+                    name="search"
+                    placeholder="🔍 Search Startup / Industry / Idea"
+                    value="{{ search if search else '' }}">
+
+                <button type="submit">
+                    🔍 Search
+                </button>
+
+            </form>
+
+        </div>
+
+        <br>
+
+        <a href="/history">
+
+            <button type="button">
+                ❌ Clear Search
+            </button>
+
+        </a>
+        <a href="/history?favorites=1">
+
+<button>
+
+⭐ View Favorites
+
+</button>
+
+</a>
+
+        <br><br>
+
+        <a href="/history?favorites=1">
+
+            <button type="button">
+                ⭐ View Favorites
+            </button>
+
+        </a>
+
+    </div>
+
+    {% if startups %}
+
+    <table class="history-table">
+
+        <tr>
+
+            <th>ID</th>
+            <th>Startup</th>
+            <th>Industry</th>
+            <th>Customers</th>
+            <th>Revenue</th>
+            <th>Score</th>
+            <th>Favorite</th>
+            <th>Action</th>
+
+        </tr>
+
+        {% for startup in startups %}
+
+        {% if startup.favorite %}
+        <tr style="background:#fff8dc;">
+        {% else %}
+        <tr>
+        {% endif %}
+
+            <td>{{ startup.id }}</td>
+
+            <td>{{ startup.name }}</td>
+
+            <td>{{ startup.industry }}</td>
+
+            <td>{{ startup.customer }}</td>
+
+            <td>{{ startup.revenue }}</td>
+
+            <td>{{ startup.score }}/100</td>
+
+            <td>
+
+                <a href="/favorite/{{ startup.id }}">
+
+                    {% if startup.favorite %}
+
+                    <button style="background:#f59e0b;">
+                        ⭐ Favorited
+                    </button>
+
+                    {% else %}
+
+                    <button style="background:#10b981;">
+                        🤍 Favorite
+                    </button>
+
+                    {% endif %}
+
+                </a>
+
+            </td>
+
+            <td>
+
+                <a href="/delete/{{ startup.id }}"
+                   onclick="return confirm('Delete this startup idea?')">
+
+                    <button style="background:#ef4444;">
+                        🗑 Delete
+                    </button>
+
+                </a>
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    {% else %}
+
+    <div class="info-card">
+
+        <h2>No Results Found</h2>
+
+        <p>
+            No startup matches your search.<br>
+            Generate more startup ideas or try another keyword.
+        </p>
+
+    </div>
+
+    {% endif %}
+
+    <br><br>
+
+    <div style="text-align:center;">
+
+        <a href="/">
+
+            <button>
+                🏠 Back to Home
+            </button>
+
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

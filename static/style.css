@@ -889,3 +889,81 @@ body.light-mode .badge{
     background:linear-gradient(135deg,#2563eb,#3b82f6);
 
 }
+/* ===========================
+   HISTORY TABLE
+=========================== */
+
+.history-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:40px;
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.history-table th{
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:18px;
+
+    text-align:center;
+
+}
+
+.history-table td{
+
+    padding:16px;
+
+    text-align:center;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+.history-table tr:hover{
+
+    background:#f3f4f6;
+
+}
+/* ===========================
+   SEARCH BAR
+=========================== */
+
+.search-box{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin:30px 0;
+
+}
+
+.search-box input{
+
+    width:350px;
+
+}
+
+.search-box button{
+
+    min-width:170px;
+
+}
