@@ -2,6 +2,7 @@ from flask import Flask, request, render_template, send_file, redirect
 import random
 
 from startup_data import startup_data, startup_names
+from startup_scorer import calculate_startup_score
 from pdf_generator import create_pdf
 from database import db, Startup
 
@@ -23,7 +24,7 @@ def home():
 
     global latest_result
 
-    result = None
+    startup_results = []
     latest_id = None
 
     industry = request.args.get("industry")
@@ -74,92 +75,117 @@ def home():
             "Month 6 - Official Launch"
         ]
 
-        score = random.randint(75, 100)
+        for idea in data["ideas"]:
 
-        if score >= 90:
-            success_level = "🚀 Excellent Chance of Success"
-        elif score >= 80:
-            success_level = "🌟 Very Good Potential"
-        elif score >= 70:
-            success_level = "👍 Good Potential"
-        else:
-            success_level = "⚠️ Needs Improvement"
+            evaluation = calculate_startup_score()
+            score = evaluation["total"]
 
-        if score >= 95:
-            funding = "Venture Capital"
-            funding_reason = (
-                "The startup has excellent growth potential and is suitable for VC funding."
+            if score >= 90:
+                success_level = "🚀 Excellent Chance of Success"
+            elif score >= 80:
+                success_level = "🌟 Very Good Potential"
+            elif score >= 70:
+                success_level = "👍 Good Potential"
+            else:
+                success_level = "⚠️ Needs Improvement"
+
+            if score >= 95:
+                funding = "Venture Capital"
+                funding_reason = "Excellent growth potential for VC investment."
+
+            elif score >= 90:
+                funding = "Angel Investment"
+                funding_reason = "Strong early-stage investment opportunity."
+
+            elif score >= 80:
+                funding = "Seed Funding"
+                funding_reason = "Suitable for seed funding."
+
+            else:
+                funding = "Bootstrapping"
+                funding_reason = "Can initially be self-funded."
+
+            result = {
+
+                "industry": industry.title(),
+
+                "name": random.choice(startup_names),
+
+                "idea": idea,
+
+                "customer": random.choice(data["customers"]),
+
+                "revenue": random.choice(data["revenue_models"]),
+
+                "description": random.choice(data["descriptions"]),
+
+                "target_market": data["target_market"],
+
+                "investment": data["investment"],
+
+                "development_time": data["development_time"],
+
+                "market_potential": data["market_potential"],
+
+                "category": data["category"],
+
+                "score": score,
+
+                "evaluation": evaluation,
+
+                "success_level": success_level,
+
+                "funding": funding,
+
+                "funding_reason": funding_reason,
+
+                "strength": random.choice(strengths),
+
+                "weakness": random.choice(weaknesses),
+
+                "opportunity": random.choice(opportunities),
+
+                "threat": random.choice(threats),
+
+                "roadmap": roadmap,
+
+                "business_tips": data["business_tips"],
+
+                "competitors": data["competitors"]
+
+            }
+
+            startup_results.append(result)
+                        # Save startup to database
+            startup = Startup(
+                industry=result["industry"],
+                name=result["name"],
+                idea=result["idea"],
+                customer=result["customer"],
+                revenue=result["revenue"],
+                description=result["description"],
+                score=result["score"]
             )
 
-        elif score >= 90:
-            funding = "Angel Investment"
-            funding_reason = (
-                "The startup shows strong potential and is attractive to angel investors."
-            )
+            db.session.add(startup)
+            db.session.flush()
 
-        elif score >= 80:
-            funding = "Seed Funding"
-            funding_reason = (
-                "The startup is ideal for early-stage seed investment."
-            )
+            latest_id = startup.id
 
-        else:
-            funding = "Bootstrapping"
-            funding_reason = (
-                "The startup can begin with personal funds before seeking investors."
-            )
-
-        result = {
-            "industry": industry.title(),
-
-            "name": random.choice(startup_names),
-            "idea": random.choice(data["ideas"]),
-            "customer": random.choice(data["customers"]),
-            "revenue": random.choice(data["revenue_models"]),
-            "description": random.choice(data["descriptions"]),
-
-            "target_market": data["target_market"],
-            "investment": data["investment"],
-            "development_time": data["development_time"],
-            "market_potential": data["market_potential"],
-            "category": data["category"],
-
-            "score": score,
-            "success_level": success_level,
-
-            "funding": funding,
-            "funding_reason": funding_reason,
-
-            "strength": random.choice(strengths),
-            "weakness": random.choice(weaknesses),
-            "opportunity": random.choice(opportunities),
-            "threat": random.choice(threats),
-
-            "roadmap": roadmap,
-            "business_tips": data["business_tips"],
-            "competitors": data["competitors"]
-        }
-
-        latest_result = result
-
-        startup = Startup(
-            industry=result["industry"],
-            name=result["name"],
-            idea=result["idea"],
-            customer=result["customer"],
-            revenue=result["revenue"],
-            description=result["description"],
-            score=result["score"]
-        )
-
-        db.session.add(startup)
+        # Save all startups
         db.session.commit()
 
-        latest_id = startup.id
+        # Highest score first
+        startup_results.sort(
+            key=lambda x: x["score"],
+            reverse=True
+        )
+
+        latest_result = startup_results[0]
 
     return render_template(
         "index.html",
-        result=result,
+        results=startup_results,
         latest_id=latest_id
     )
 
@@ -182,7 +208,9 @@ def history():
             Startup.idea.contains(search)
         )
 
-    startups = query.order_by(Startup.id.desc()).all()
+    startups = query.order_by(
+        Startup.id.desc()
+    ).all()
 
     return render_template(
         "history.html",
@@ -225,9 +253,11 @@ def download():
 
     filename = create_pdf(latest_result)
 
-    return send_file(filename, as_attachment=True)
+    return send_file(
+        filename,
+        as_attachment=True
+    )
 
 
 if __name__ == "__main__":
     app.run(debug=True)
-

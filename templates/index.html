@@ -6,33 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Startup Idea Generator</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
 <div class="container">
 
-   <!-- Hero Section -->
-
 <div class="hero">
+
     <div class="theme-toggle">
 
-    <button id="themeButton" onclick="toggleTheme()">
+        <button id="themeButton" onclick="toggleTheme()">
+            🌙 Dark Mode
+        </button>
 
-        🌙 Dark Mode
-
-    </button>
-
-</div>
+    </div>
 
     <div class="hero-content">
 
         <h1>🚀 AI Startup Idea Generator</h1>
 
         <p>
-            Generate innovative AI startup ideas, analyze business potential,
-            explore competitors, and download professional startup reports.
+            Generate the Top 10 AI Startup Ideas ranked by
+            scalability, profitability, implementation ease,
+            market demand and problem-solving capability.
         </p>
 
         <form action="/" method="GET" class="hero-form">
@@ -40,11 +39,11 @@
             <input
                 type="text"
                 name="industry"
-                placeholder="🔍 Enter an Industry (Healthcare, Finance, Education...)"
+                placeholder="Healthcare, Finance, Education..."
                 required>
 
             <button type="submit">
-                🚀 Generate Startup
+                🚀 Generate Top 10 Ideas
             </button>
 
         </form>
@@ -52,346 +51,255 @@
     </div>
 
 </div>
-<!-- Feature Section -->
 
-<div class="features">
+{% if results %}
 
-    <div class="feature-card">
+<h1 style="text-align:center;margin-top:40px;">
+🏆 Top 10 Ranked Startup Ideas
+</h1>
 
-        <h2>🚀 AI Startup Ideas</h2>
+<p style="text-align:center;">
+Ideas are ranked using the AI Startup Evaluation Engine.
+</p>
 
-        <p>
-            Generate innovative startup ideas based on your selected industry.
-        </p>
+{% for result in results %}
 
-    </div>
+<div class="info-card" style="margin-top:30px;">
 
-    <div class="feature-card">
+<h2>
 
-        <h2>📊 Business Analysis</h2>
+🥇 Rank #{{ loop.index }}
 
-        <p>
-            SWOT analysis, funding suggestions and startup scoring.
-        </p>
+</h2>
 
-    </div>
+<h3>
 
-    <div class="feature-card">
+{{ result.name }}
 
-        <h2>🏢 Competitor Insights</h2>
+</h3>
 
-        <p>
-            Explore major competitors and understand the market.
-        </p>
+<p>
 
-    </div>
+<b>Industry:</b> {{ result.industry }}
 
-    <div class="feature-card">
+</p>
 
-        <h2>📄 PDF Reports</h2>
+<p>
 
-        <p>
-            Download a professional startup report with one click.
-        </p>
+<b>Startup Idea:</b>
 
-    </div>
+{{ result.idea }}
 
-</div>
-<!-- Statistics Section -->
+</p>
 
-<div class="stats-section">
+<p>
 
-    <div class="stat-card">
+<b>Description:</b>
 
-        <h2>1000+</h2>
+{{ result.description }}
 
-        <p>Startup Ideas Generated</p>
+</p>
 
-    </div>
+<p>
 
-    <div class="stat-card">
+<b>Target Customers:</b>
 
-        <h2>25+</h2>
+{{ result.customer }}
 
-        <p>Business Features</p>
+</p>
 
-    </div>
+<p>
 
-    <div class="stat-card">
+<b>Revenue Model:</b>
 
-        <h2>10+</h2>
+{{ result.revenue }}
 
-        <p>Industry Categories</p>
+</p>
 
-    </div>
+<p>
 
-    <div class="stat-card">
+<b>Target Market:</b>
 
-        <h2>99%</h2>
+{{ result.target_market }}
 
-        <p>User Satisfaction</p>
+</p>
 
-    </div>
+<p>
 
-</div>
-    {% if result %}
+<b>Category:</b>
 
-    <!-- Dashboard -->
+{{ result.category }}
 
-    <!-- Dashboard -->
-
-<div class="section-title">
-
-    <h1>📊 Startup Overview</h1>
-
-    <p>Your AI-generated business summary</p>
-
-</div>
-
-<div class="dashboard">
-
-        <div class="info-card">
-            <h2>🚀 Startup Name</h2>
-            <p>{{ result.name }}</p>
-        </div>
-
-        <div class="info-card">
-            <h2>💡 Startup Idea</h2>
-            <p>{{ result.idea }} for {{ result.industry }}</p>
-        </div>
-
-        <div class="info-card">
-            <h2>🎯 Target Customers</h2>
-            <p>{{ result.customer }}</p>
-        </div>
-
-        <div class="info-card">
-            <h2>💰 Revenue Model</h2>
-            <p>{{ result.revenue }}</p>
-        </div>
-
-        <div class="info-card">
-            <h2>📝 Startup Description</h2>
-            <p>{{ result.description }}</p>
-        </div>
-
-        <div class="info-card">
-            <h2>🌍 Target Market</h2>
-            <span class="badge">{{ result.target_market }}</span>
-        </div>
-
-        <div class="info-card">
-            <h2>💵 Estimated Investment</h2>
-            <p>{{ result.investment }}</p>
-        </div>
-
-        <div class="info-card">
-            <h2>⏳ Development Time</h2>
-            <p>{{ result.development_time }}</p>
-        </div>
-
-        <div class="info-card">
-            <h2>📈 Market Potential</h2>
-            <span class="badge">{{ result.market_potential }}</span>
-        </div>
-
-        <div class="info-card">
-            <h2>🏷️ Startup Category</h2>
-            <span class="badge">{{ result.category }}</span>
-        </div>
-
+</p>
 <!-- Startup Score -->
 
-<div class="info-card score-card">
+<h3>⭐ AI Startup Score</h3>
 
-    <h2>⭐ Startup Score</h2>
+<h2>{{ result.score }}/100</h2>
 
-    <h3>{{ result.score }}/100</h3>
+<div class="progress-bar">
 
-    <div class="progress-bar">
-
-        <div class="progress-fill"
-             style="width: {{ result.score }}%;">
-        </div>
+    <div class="progress-fill"
+         style="width: {{ result.score }}%;">
 
     </div>
 
 </div>
+
+<br>
 
 <!-- Success Meter -->
 
-<div class="info-card">
+<div class="success-box">
 
-    <h2>🏆 Startup Success Meter</h2>
-
-    <div class="success-box">
-
-        <h3>{{ result.success_level }}</h3>
-
-    </div>
+    <h3>{{ result.success_level }}</h3>
 
 </div>
 
-<!-- Funding Recommendation -->
-
-<div class="info-card">
-
-    <h2>💰 Recommended Funding</h2>
-
-    <div class="funding-box">
-
-        <h3>{{ result.funding }}</h3>
-
-        <p>{{ result.funding_reason }}</p>
-
-    </div>
-
-</div>
-
-    </div>
-
-    <!-- SWOT Analysis -->
-
-    <details class="accordion" open>
-
-<summary>📊 SWOT Analysis</summary>
-
-<div class="dashboard">
-
-    <div class="info-card">
-        <h2>💪 Strength</h2>
-        <p>{{ result.strength }}</p>
-    </div>
-
-    <div class="info-card">
-        <h2>⚠️ Weakness</h2>
-        <p>{{ result.weakness }}</p>
-    </div>
-
-    <div class="info-card">
-        <h2>🚀 Opportunity</h2>
-        <p>{{ result.opportunity }}</p>
-    </div>
-
-    <div class="info-card">
-        <h2>🚨 Threat</h2>
-        <p>{{ result.threat }}</p>
-    </div>
-
-</div>
-
-</details>
-    <!-- Startup Roadmap -->
-
-<details class="accordion">
-
-<summary>📅 Startup Roadmap</summary>
-
-    <h1>📅 Startup Roadmap</h1>
-
-    <div class="dashboard">
-
-        {% for step in result.roadmap %}
-
-        <div class="info-card">
-
-            <h2>{{ step.split(' - ')[0] }}</h2>
-
-            <p>{{ step.split(' - ')[1] }}</p>
-
-        </div>
-
-        {% endfor %}
-
-    </div>
-
-</details>
-
-<!-- Business Tips -->
-
-<details class="accordion">
-
-<summary>💡 AI Business Tips</summary>
-
-    <h1>💡 AI Business Tips</h1>
-
-    <div class="dashboard">
-
-        {% for tip in result.business_tips %}
-
-        <div class="info-card">
-
-            <h2>💡 Tip {{ loop.index }}</h2>
-
-            <p>{{ tip }}</p>
-
-        </div>
-
-        {% endfor %}
-
-    </div>
-
-</details>
-<!-- Competitor Analysis -->
-
-<details class="accordion">
-
-<summary>🏢 Competitor Analysis</summary>
-
-    <h1>🏢 Competitor Analysis</h1>
-
-    <div class="dashboard">
-
-        {% for company in result.competitors %}
-
-        <div class="info-card">
-
-            <h2>🏢 Competitor {{ loop.index }}</h2>
-
-            <p>{{ company }}</p>
-
-        </div>
-
-        {% endfor %}
-
-    </div>
-
-    <br>
-
-    <div class="info-card">
-
-        <h2>📊 Why Analyze Competitors?</h2>
-
-        <p>
-            Understanding your competitors helps you identify market gaps,
-            improve your product, and build a stronger startup strategy.
-        </p>
-
-    </div>
-
-</details>
 <br>
 
-<div style="text-align:center; margin:60px 0;"></div>
+<!-- Funding -->
 
-    <div style="text-align:center; margin-top:40px;">
+<h3>💰 Funding Recommendation</h3>
 
-    <a href="/favorite/{{ latest_id }}">
+<p>
 
-        <button type="button"
-                style="background:#f59e0b; margin-right:15px;">
+<b>{{ result.funding }}</b>
 
-            ⭐ Add to Favorites
+</p>
 
-        </button>
+<p>
 
-    </a>
+{{ result.funding_reason }}
+
+</p>
+
+<hr>
+
+<h3>📊 AI Evaluation</h3>
+
+<table class="history-table">
+
+<tr>
+
+<th>Criteria</th>
+
+<th>Score</th>
+
+</tr>
+
+<tr>
+
+<td>Problem Solving</td>
+
+<td>{{ result.evaluation.problem_solving }}/20</td>
+
+</tr>
+
+<tr>
+
+<td>Scalability</td>
+
+<td>{{ result.evaluation.scalability }}/20</td>
+
+</tr>
+
+<tr>
+
+<td>Profitability</td>
+
+<td>{{ result.evaluation.profitability }}/20</td>
+
+</tr>
+
+<tr>
+
+<td>Ease of Implementation</td>
+
+<td>{{ result.evaluation.implementation }}/20</td>
+
+</tr>
+
+<tr>
+
+<td>Market Demand</td>
+
+<td>{{ result.evaluation.market }}/20</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<h3>💪 SWOT Analysis</h3>
+
+<ul>
+
+<li><b>Strength:</b> {{ result.strength }}</li>
+
+<li><b>Weakness:</b> {{ result.weakness }}</li>
+
+<li><b>Opportunity:</b> {{ result.opportunity }}</li>
+
+<li><b>Threat:</b> {{ result.threat }}</li>
+
+</ul>
+
+<hr>
+
+<h3>📅 Startup Roadmap</h3>
+
+<ul>
+
+{% for step in result.roadmap %}
+
+<li>{{ step }}</li>
+
+{% endfor %}
+
+</ul>
+
+<hr>
+
+<h3>💡 Business Tips</h3>
+
+<ul>
+
+{% for tip in result.business_tips %}
+
+<li>{{ tip }}</li>
+
+{% endfor %}
+
+</ul>
+
+<hr>
+
+<h3>🏢 Competitors</h3>
+
+<ul>
+
+{% for company in result.competitors %}
+
+<li>{{ company }}</li>
+
+{% endfor %}
+
+</ul>
+
+</div>
+
+{% endfor %}
+<br><br>
+
+<div style="text-align:center; margin:40px;">
 
     <a href="/download">
 
         <button type="button">
 
-            📄 Download Startup Report (PDF)
+            📄 Download Best Startup Report (PDF)
 
         </button>
 
@@ -410,11 +318,8 @@
     </a>
 
 </div>
-</div>
 
 {% endif %}
-
-<!-- Footer -->
 
 <footer class="footer">
 
@@ -423,22 +328,28 @@
         <h2>🚀 AI Startup Idea Generator</h2>
 
         <p>
-            Generate innovative AI startup ideas, analyze business potential,
-            and download professional startup reports.
+
+            Generate the Top 10 AI Startup Ideas ranked by AI using
+            scalability, profitability, market demand,
+            implementation feasibility and innovation.
+
         </p>
 
         <div class="footer-links">
 
             <span>🐍 Python</span>
+
             <span>⚡ Flask</span>
+
             <span>🤖 AI Powered</span>
-            <span>💻 Developed by Vaishnavi</span>
+
+            <span>🏆 Top 10 Ranking Engine</span>
 
         </div>
 
         <p class="copyright">
 
-            © 2026 AI Startup Idea Generator • Developed with ❤️ by Vaishnavi
+            © 2026 AI Startup Idea Generator
 
         </p>
 

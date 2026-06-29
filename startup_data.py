@@ -16,48 +16,91 @@ startup_data = {
     "healthcare": {
 
     "ideas": [
-        "AI Medical Assistant",
+        "AI Medical Diagnosis Platform",
         "AI Hospital Management System",
-        "AI Patient Monitoring Platform",
-        "AI Health Analytics Platform"
+        "AI Drug Discovery Assistant",
+        "AI Remote Patient Monitoring",
+        "AI Medical Imaging Analyzer",
+        "AI Mental Health Companion",
+        "AI Nutrition Planner",
+        "AI Surgery Assistance Platform",
+        "AI Health Insurance Assistant",
+        "AI Elder Care Monitoring"
     ],
 
     "customers": [
-        "Doctors",
         "Hospitals",
+        "Doctors",
+        "Clinics",
         "Patients",
-        "Clinics"
+        "Healthcare Startups",
+        "Diagnostic Centers",
+        "Insurance Companies",
+        "Government Health Departments",
+        "Medical Colleges",
+        "Pharmacies"
     ],
 
     "revenue_models": [
         "Subscription",
         "Enterprise Licensing",
-        "Pay-per-use"
+        "Hospital SaaS",
+        "Pay Per Consultation",
+        "API Licensing",
+        "Commission",
+        "Freemium",
+        "Usage Based Pricing",
+        "Annual Contracts",
+        "B2B Licensing"
     ],
 
     "descriptions": [
-        "Helps doctors diagnose diseases using AI.",
-        "Automates hospital operations efficiently.",
-        "Monitors patients remotely using AI.",
-        "Provides healthcare analytics for hospitals."
+        "Uses AI to detect diseases at an early stage.",
+        "Automates complete hospital operations.",
+        "Accelerates drug discovery using machine learning.",
+        "Monitors patient health remotely in real time.",
+        "Analyzes X-rays, CT scans and MRIs with AI.",
+        "Provides AI-powered mental health support.",
+        "Generates personalized nutrition plans.",
+        "Assists surgeons using computer vision.",
+        "Simplifies health insurance claim processing.",
+        "Monitors elderly people using wearable AI."
     ],
 
     "target_market": "Global",
-    "investment": "₹15 Lakhs",
+
+    "investment": "₹20 Lakhs",
+
     "development_time": "8 Months",
+
     "market_potential": "Very High",
-    "category": "Healthcare Technology",
+
+    "category": "Healthcare AI",
+
     "competitors": [
-    "Practo",
-    "Apollo 24/7",
-    "Tata 1mg"
-],
+        "Practo",
+        "Apollo 24/7",
+        "Tata 1mg",
+        "HealthifyMe",
+        "Cure.fit",
+        "Microsoft Healthcare",
+        "Google Health",
+        "Ada Health",
+        "Babylon Health",
+        "Teladoc"
+    ],
 
     "business_tips": [
-        "Ensure patient data privacy.",
-        "Partner with hospitals and clinics.",
-        "Comply with healthcare regulations.",
-        "Build trust with doctors."
+        "Follow HIPAA and healthcare regulations.",
+        "Protect patient data using encryption.",
+        "Partner with hospitals.",
+        "Focus on clinical validation.",
+        "Build trust with doctors.",
+        "Offer multilingual support.",
+        "Integrate wearable devices.",
+        "Provide cloud-based dashboards.",
+        "Support telemedicine.",
+        "Continuously improve AI accuracy."
     ]
 
 },
@@ -65,96 +108,182 @@ startup_data = {
     "education": {
 
     "ideas": [
-        "AI Learning Assistant",
+        "AI Personalized Learning Platform",
+        "AI Virtual Tutor",
         "AI Exam Generator",
-        "AI Tutor Platform",
-        "AI Student Analytics"
+        "AI Homework Assistant",
+        "AI Classroom Analytics",
+        "AI Career Guidance Platform",
+        "AI Language Learning Coach",
+        "AI Skill Assessment System",
+        "AI College Admission Assistant",
+        "AI Teacher Productivity Suite"
     ],
 
     "customers": [
         "Students",
         "Teachers",
         "Schools",
-        "Universities"
+        "Universities",
+        "Parents",
+        "Coaching Institutes",
+        "EdTech Companies",
+        "Corporate Trainers",
+        "Government Education Boards",
+        "Online Learning Platforms"
     ],
 
     "revenue_models": [
-        "Freemium",
         "Subscription",
-        "Advertising"
+        "Freemium",
+        "Institution Licensing",
+        "Annual Plans",
+        "Course Marketplace",
+        "Advertising",
+        "Corporate Licensing",
+        "Pay Per Student",
+        "Premium Membership",
+        "Certification Fees"
     ],
 
     "descriptions": [
-        "Personalized AI tutor for students.",
-        "Creates smart online exams.",
-        "Tracks student learning progress.",
-        "Improves classroom engagement using AI."
+        "Creates personalized study plans using AI.",
+        "Provides 24/7 AI tutoring.",
+        "Automatically generates question papers.",
+        "Solves homework with detailed explanations.",
+        "Tracks student performance and engagement.",
+        "Suggests career paths based on student skills.",
+        "Helps users learn new languages faster.",
+        "Evaluates skills using AI assessments.",
+        "Guides students through college admissions.",
+        "Automates lesson planning for teachers."
     ],
 
-    "target_market": "National",
-    "investment": "₹8 Lakhs",
-    "development_time": "5 Months",
-    "market_potential": "High",
-    "category": "Education Technology",
+    "target_market": "Global",
+
+    "investment": "₹10 Lakhs",
+
+    "development_time": "6 Months",
+
+    "market_potential": "Very High",
+
+    "category": "EdTech AI",
+
     "competitors": [
-    "BYJU'S",
-    "Unacademy",
-    "Coursera"
-],
+        "BYJU'S",
+        "Unacademy",
+        "Coursera",
+        "Udemy",
+        "Khan Academy",
+        "Duolingo",
+        "Chegg",
+        "Quizizz",
+        "Google Classroom",
+        "Microsoft Education"
+    ],
 
     "business_tips": [
-        "Create engaging learning experiences.",
-        "Update educational content regularly.",
-        "Work closely with teachers.",
-        "Offer free trial courses."
+        "Keep the interface simple.",
+        "Support mobile learning.",
+        "Gamify the learning process.",
+        "Provide personalized recommendations.",
+        "Use adaptive learning algorithms.",
+        "Partner with schools.",
+        "Offer certificates.",
+        "Track learning progress.",
+        "Provide multilingual content.",
+        "Regularly update educational material."
     ]
 
 },
-
     "finance": {
 
     "ideas": [
         "AI Investment Advisor",
-        "AI Fraud Detection",
+        "AI Fraud Detection Platform",
         "AI Budget Planner",
-        "AI Financial Analytics"
+        "AI Personal Finance Coach",
+        "AI Credit Score Analyzer",
+        "AI Loan Approval Assistant",
+        "AI Tax Filing Assistant",
+        "AI Expense Tracker",
+        "AI Wealth Management Platform",
+        "AI Financial Forecasting Tool"
     ],
 
     "customers": [
         "Banks",
         "Investors",
         "Businesses",
-        "Financial Advisors"
+        "Financial Advisors",
+        "Individuals",
+        "Insurance Companies",
+        "Startups",
+        "NBFCs",
+        "Government Agencies",
+        "Accounting Firms"
     ],
 
     "revenue_models": [
         "Subscription",
         "Enterprise Licensing",
-        "Commission"
+        "Commission",
+        "Freemium",
+        "Premium Membership",
+        "API Licensing",
+        "Transaction Fees",
+        "Consulting",
+        "Pay Per Report",
+        "Annual Plans"
     ],
 
     "descriptions": [
-        "Detects financial fraud instantly.",
-        "Provides AI investment recommendations.",
-        "Analyzes financial performance.",
-        "Helps customers manage budgets."
+        "Provides AI-powered investment recommendations.",
+        "Detects fraudulent financial transactions instantly.",
+        "Creates smart monthly budgets.",
+        "Acts as an AI financial advisor.",
+        "Predicts and improves customer credit scores.",
+        "Automates loan eligibility analysis.",
+        "Simplifies tax filing using AI.",
+        "Tracks expenses automatically.",
+        "Helps users grow wealth intelligently.",
+        "Predicts future financial performance using AI."
     ],
 
     "target_market": "Global",
+
     "investment": "₹25 Lakhs",
-    "development_time": "10 Months",
+
+    "development_time": "9 Months",
+
     "market_potential": "Very High",
-    "category": "FinTech",
-"competitors": [
-    "Zerodha",
-    "Groww",
-    "Paytm Money"
-],
+
+    "category": "FinTech AI",
+
+    "competitors": [
+        "Zerodha",
+        "Groww",
+        "Paytm Money",
+        "INDmoney",
+        "Cred",
+        "Razorpay",
+        "PhonePe",
+        "Stripe",
+        "Wealthfront",
+        "Robinhood"
+    ],
+
     "business_tips": [
-        "Focus on strong security measures.",
-        "Follow financial regulations.",
+        "Ensure bank-grade security.",
+        "Comply with financial regulations.",
         "Build customer trust.",
-        "Provide transparent pricing."
+        "Provide transparent pricing.",
+        "Use strong encryption.",
+        "Offer real-time analytics.",
+        "Support multiple payment gateways.",
+        "Automate reporting.",
+        "Focus on user experience.",
+        "Continuously improve fraud detection."
     ]
 
 },
@@ -207,13 +336,17 @@ startup_data = {
 
 },
     "default": {
-
     "ideas": [
-        "AI Assistant",
-        "AI Marketplace",
-        "AI Analytics Platform",
         "AI Automation Tool",
-        "AI Recommendation System"
+        "AI Virtual Assistant",
+        "Predictive Analytics Platform",
+        "Recommendation Engine",
+        "Business Intelligence Dashboard",
+        "AI Chatbot Platform",
+        "Workflow Automation System",
+        "Smart Data Analysis Tool",
+        "AI Scheduling Assistant",
+        "Document Processing AI"
     ],
 
     "customers": [
